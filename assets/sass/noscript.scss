@@ -1,0 +1,35 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+
+
+/* Wrapper */
+
+	#wrapper {
+		body.is-preload & {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+/* Main */
+
+	#main {
+		body.is-preload & {
+			.thumb {
+				@include vendor('pointer-events', 'auto');
+				opacity: 1;
+			}
+		}
+	}
+
+/* Header */
+
+	#header {
+		body.is-preload & {
+			@include vendor('transform', 'none');
+		}
+	}
